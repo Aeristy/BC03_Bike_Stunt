@@ -83,19 +83,19 @@ namespace Kamgam.BikeAndCharacter25D
         public float BikePitchAngleAbs => bikePitchAngleAbs;
 
         // Speed - modified by SetBikeValues(...)
-        protected float configMaxMotorSpeed;
-        protected float configMaxMotorTorque;
-        protected float configMaxMotorTorqueOnSlopes;
-        protected float configMotorSpeedIncrement;
-        protected float configMaxVelocity; // if the bike is faster than this limit then boost or speed Up have no effect.
+        public float configMaxMotorSpeed;
+        public float configMaxMotorTorque;
+        public float configMaxMotorTorqueOnSlopes;
+        public float configMotorSpeedIncrement;
+        public float configMaxVelocity; // if the bike is faster than this limit then boost or speed Up have no effect.
         protected float configBoostIncrement;
-        protected float configTorqueForce;
+        public float configTorqueForce;
 
         public Vector2 centerOfMassPos;
         protected Vector2 centerOfMassInAirPos;
 
-        protected float nextMotorSpeedIncrement;
-        protected float motorSpeed;
+        public float nextMotorSpeedIncrement;
+        public float motorSpeed;
         /// <summary>
         /// A value between -1 and +1, defines whether or not the user wants to rotate the bike in the next physics update.
         /// </summary>

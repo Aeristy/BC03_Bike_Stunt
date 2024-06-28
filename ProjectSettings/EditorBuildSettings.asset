@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/BikeRacingTemplate2.5D/Scenes/DialogAlert.unity
     guid: 8b69ff83431b4ed41a1a0233d5c47db4
+  - enabled: 1
+    path: Assets/Art_Thuy/gara/sence/gara.unity
+    guid: e6b46fbe0825c794abfe1968626ad13f
+  - enabled: 1
+    path: Assets/BikeRacingTemplate2.5D/Scenes/Test Scene.unity
+    guid: 8d03e10a46816874fa2890f0d47aca31
   m_configObjects: {}

@@ -93,6 +93,17 @@ MonoBehaviour:
   LeftLowerArmBone: {fileID: 8291490565670306601}
   LeftUpperLegBone: {fileID: 8884637224888808767}
   LeftLowerLegBone: {fileID: 2222401416374137352}
+  HeadBoneMemory: {x: 0, y: 0, z: 0, w: 0}
+  TorsoBoneMemory: {x: 0, y: 0, z: 0, w: 0}
+  RightUpperArmBoneMemory: {x: 0, y: 0, z: 0, w: 0}
+  RightLowerArmBoneMemory: {x: 0, y: 0, z: 0, w: 0}
+  RightUpperLegBoneMemory: {x: 0, y: 0, z: 0, w: 0}
+  RightLowerLegBoneMemory: {x: 0, y: 0, z: 0, w: 0}
+  LeftUpperArmBoneMemory: {x: 0, y: 0, z: 0, w: 0}
+  LeftLowerArmBoneMemory: {x: 0, y: 0, z: 0, w: 0}
+  LeftUpperLegBoneMemory: {x: 0, y: 0, z: 0, w: 0}
+  LeftLowerLegBoneMemory: {x: 0, y: 0, z: 0, w: 0}
+  boneLoaded: 1
 --- !u!1 &734667273845844424
 GameObject:
   m_ObjectHideFlags: 0
@@ -5219,7 +5230,15 @@ MonoBehaviour:
     m_Bits: 2049
   RollOverProtection: 1
   AutoBrakeAtLowSpeed: 1
+  configMaxMotorSpeed: 0
+  configMaxMotorTorque: 0
+  configMaxMotorTorqueOnSlopes: 0
+  configMotorSpeedIncrement: 0
+  configMaxVelocity: 0
+  configTorqueForce: 0
   centerOfMassPos: {x: 0, y: 0}
+  nextMotorSpeedIncrement: 0
+  motorSpeed: 0
   isGliding: 0
   GliderForce: {x: 0, y: 0}
   TurnMultiplier: 1
@@ -15542,6 +15561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: 87411757275584d479d44d51fce72688, type: 2}
+  CharacterBones: {fileID: 0}
   DistanceToGroundLayers:
     serializedVersion: 2
     m_Bits: 2049
@@ -15586,7 +15606,7 @@ GameObject:
   - component: {fileID: 853341360205517544}
   - component: {fileID: 3977300235642912517}
   m_Layer: 0
-  m_Name: BigAndCharacter2
+  m_Name: BikeAndCharacter2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15950,8 +15970,8 @@ HingeJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: -0.16106066, y: 0.018311672}
-  m_ConnectedAnchor: {x: -0.0029096787, y: -0.050003376}
+  m_Anchor: {x: 0.04101751, y: 0.055694126}
+  m_ConnectedAnchor: {x: 0.20156708, y: -0.029454805}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -15974,8 +15994,8 @@ HingeJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0.15578406, y: -0.028013347}
-  m_ConnectedAnchor: {x: 0.13630173, y: 0.97603613}
+  m_Anchor: {x: 0.3751816, y: -0.021853646}
+  m_ConnectedAnchor: {x: 0.42653704, y: 0.98648167}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -16131,7 +16151,7 @@ DistanceJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: -0.0018567977, y: -0.04873731}
-  m_ConnectedAnchor: {x: -0.22343463, y: 0.9613244}
+  m_ConnectedAnchor: {x: -0.1753316, y: 0.9714563}
   m_AutoConfigureDistance: 0
   m_Distance: 0.16
   m_MaxDistanceOnly: 1
@@ -21051,8 +21071,8 @@ DistanceJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0.01445888, y: 0.14918119}
-  m_ConnectedAnchor: {x: -0.163213, y: 1.1544377}
+  m_Anchor: {x: 0.00594759, y: 0.11012912}
+  m_ConnectedAnchor: {x: -0.054878235, y: 1.12063}
   m_AutoConfigureDistance: 0
   m_Distance: 0.054
   m_MaxDistanceOnly: 1
@@ -21089,7 +21109,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.014260374, y: 0.07122961}
+  m_Offset: {x: 0.050431583, y: 0.07122961}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -21100,7 +21120,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.17095752, y: 0.4158762}
+  m_Size: {x: 0.16713023, y: 0.4158762}
   m_EdgeRadius: 0
 --- !u!1 &853341360733214402
 GameObject:
@@ -21131,7 +21151,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853341360733214402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.006, y: 0.824, z: 0}
+  m_LocalPosition: {x: 0.03, y: 0.824, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

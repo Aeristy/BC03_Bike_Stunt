@@ -41,9 +41,18 @@ namespace Kamgam.BikeAndCharacter25D
             }
         }
         public bool isRotating;
-        public void Update()
+        public bool isInGarage = false;
+        private void OnEnable()
         {
             
+        }
+        public void Update()
+        {
+            if (GarageController.Instance)
+            {
+                isInGarage = true;
+            }
+            if (isInGarage) return;
             if (!HandleUserInput)
                 return;
 
@@ -65,6 +74,7 @@ namespace Kamgam.BikeAndCharacter25D
             Bike.IsSpeedingUp = UIManager.Instance.TouchZone.pressing;
             if (InAir && Bike.IsSpeedingUp)
             {
+                
                 if (!isRotating)
                 {
                     StartCoroutine(StartRotating());

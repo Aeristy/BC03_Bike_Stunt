@@ -31,20 +31,20 @@ namespace Kamgam.BikeAndCharacter25D
         public Transform LeftUpperLegBone;
         public Transform LeftLowerLegBone;
 
-        protected Quaternion HeadBoneMemory;
-        protected Quaternion TorsoBoneMemory;
-        protected Quaternion RightUpperArmBoneMemory;
-        protected Quaternion RightLowerArmBoneMemory;
-        protected Quaternion RightUpperLegBoneMemory;
-        protected Quaternion RightLowerLegBoneMemory;
+        public Quaternion HeadBoneMemory;
+        public Quaternion TorsoBoneMemory;
+        public Quaternion RightUpperArmBoneMemory;
+        public Quaternion RightLowerArmBoneMemory;
+        public Quaternion RightUpperLegBoneMemory;
+        public Quaternion RightLowerLegBoneMemory;
 
-        protected Quaternion LeftUpperArmBoneMemory;
-        protected Quaternion LeftLowerArmBoneMemory;
-        protected Quaternion LeftUpperLegBoneMemory;
-        protected Quaternion LeftLowerLegBoneMemory;
+        public Quaternion LeftUpperArmBoneMemory;
+        public Quaternion LeftLowerArmBoneMemory;
+        public Quaternion LeftUpperLegBoneMemory;
+        public Quaternion LeftLowerLegBoneMemory;
 
         protected Character character;
-
+        public bool boneLoaded = true;
         private void Start()
         {
             memorize();
@@ -53,7 +53,10 @@ namespace Kamgam.BikeAndCharacter25D
 
         public void FixedUpdate()
         {
-            updateBones();
+            if (boneLoaded)
+            {
+                updateBones();
+            }
         }
 
         protected void memorize()

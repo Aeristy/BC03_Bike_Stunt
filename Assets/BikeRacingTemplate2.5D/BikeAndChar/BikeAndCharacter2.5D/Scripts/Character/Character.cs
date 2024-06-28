@@ -8,6 +8,7 @@ namespace Kamgam.BikeAndCharacter25D
     public partial class Character : MonoBehaviour
     {
         public CharacterConfig Config;
+        public CharacterBones CharacterBones;
 
         protected class RelativeTransformMemory
         {

@@ -14,9 +14,18 @@ public class UIManager : MonoBehaviour
 
     public int bikeid = 1;
     public UIGarage Garage;
+    public UIIngame Ingame;
+    public UISelectLevel SelectLevel;
     private void Awake()
     {
         Instance = this;
+        foreach(PopupBase popup in transform.GetComponentsInChildren<PopupBase>())
+        {
+            PopupList.Add(popup);
+            popup.gameObject.SetActive(false);
+        }
+        PopupList.Add(Ingame);
+        Ingame.gameObject.SetActive(false);
     }
     public static Vector2 GetPosBy(RectTransform rectTransform, MoveDirection position)
     {

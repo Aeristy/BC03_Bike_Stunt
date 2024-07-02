@@ -9,15 +9,14 @@ public static class Utility
     {
         if (PlayerPrefs.HasKey(Application.identifier))
         {
-            string @string = PlayerPrefs.GetString(Application.identifier);
+            string @string = PlayerPrefs.GetString(Application.identifier);           
             PlayerModel t = (PlayerModel)(Utility.FromByteArray(Convert.FromBase64String(@string)));
             
             return t;
         }
         else
         {
-            PlayerModel t = new PlayerModel();
-            
+            PlayerModel t = new PlayerModel();           
             PlayerPrefs.SetString(Application.identifier,
                 Convert.ToBase64String(Utility.ToByteArray(t)));
             return t;
@@ -29,6 +28,7 @@ public static class Utility
     {
         PlayerPrefs.SetString(Application.identifier,
             Convert.ToBase64String(Utility.ToByteArray(saveData)));
+       
     }
 
     static object FromByteArray(byte[] array)

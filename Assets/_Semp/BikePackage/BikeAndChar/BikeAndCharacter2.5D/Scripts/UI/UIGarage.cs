@@ -13,11 +13,12 @@ public class UIGarage : PopupBase
         base.OnEnable();
         MainPanel.SetActive(true);
         GaragePanel.SetActive(false);
+        state = GARAGE_STATE.MAIN;
     }
     public void OnRace()
     {
         Hide();
-        GameManager.Instance.LoadTestScene();
+        UIManager.Instance.SelectLevel.Show();
     }
     public void OnGarage()
     {

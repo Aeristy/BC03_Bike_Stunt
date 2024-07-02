@@ -6,19 +6,19 @@ public class LevelController : MonoBehaviour
 {
     public static LevelController Instance;
 
-    public GameObject BikePrefab;
-    private BikeAndCharacter bikeController;
+    public BikeAndCharacter bikeController;
     public BC_Camera cameraman;
-    public Level level;
-    public GameObject touchInput;
+    public LevelPrefab levelPrefab;
 
     private GameObject BikeObject;
 
-    [HideInInspector] public Vector2 lastCheckpoint;
+    private PlayerModel _player;
+    [HideInInspector] public Vector3 lastCheckpoint;
 
     private void Awake()
     {
         Instance = this;
+        _player = GameManager.Instance._player;
     }
 
     private void Start()
@@ -26,9 +26,12 @@ public class LevelController : MonoBehaviour
         //StartCoroutine(SpawnBike(level.StartPoint.position));
         Physics2D.simulationMode = SimulationMode2D.Script;
         //level.GenMesh();
+        UIManager.Instance.Ingame.Show();
+        OnlevelLoad();
+        StartCoroutine(SpawnBike(levelPrefab.startPoint.position));
     }
 
-    protected IEnumerator SpawnBike(Vector2 _pos)
+    protected IEnumerator SpawnBike(Vector3 _pos)
     {
         lastCheckpoint = _pos;
 
@@ -42,47 +45,39 @@ public class LevelController : MonoBehaviour
         }
 
         // create new
-        BikeObject = Instantiate(BikePrefab, transform);
-        BikeObject.transform.position = _pos;
+        //BikeObject = Instantiate(BikePrefab, transform);
+        BikeObject = Instantiate(DataManager.Instance.bikes.listBike[_player.currentBike - 1].bikeSource, _pos, Quaternion.identity,transform);
+        //BikeObject.transform.position = _pos;
         bikeController = BikeObject.GetComponent<BikeAndCharacter>();
-
-
         bikeController.PauseBike(true);
         bikeController.HandleUserInput = false;
         bikeController.Bike.IsBraking = true;
-        bikeController.TouchInput = touchInput.GetComponent<IBikeTouchInput>();
 
         // inform cameraman
         cameraman.SetTarget(bikeController.Character.TorsoBody);
 
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
         bikeController.HandleUserInput = true;
         bikeController.PauseBike(false);
     }
 
-    public void OnlevelLoaded()
+    public void OnlevelLoad()
     {
-        Debug.Log("Level loaded");
+        GameObject level = Instantiate(DataManager.Instance.levels.listLevel[0].LevelSource, transform);
+        levelPrefab = level.GetComponent<LevelPrefab>();
+        UIManager.Instance.Ingame.Show();
     }
 
 
-    public void OnReset()
-    {
-        StartCoroutine(SpawnBike(level.StartPoint.position));
-        level.ResetLevel();
-    }
+
 
     public void SavePoint(Transform savePoint)
     {
         lastCheckpoint = savePoint.position;
-        lastCheckpoint += Vector2.up * 0.5f;
+        lastCheckpoint += Vector3.up * 0.5f;
     }
 
-    public void LoadSavePoint()
-    {
-        StartCoroutine(SpawnBike(lastCheckpoint));
-        level.ResetAnimation();
-    }
+
 
     public void FixedUpdate()
     {

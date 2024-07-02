@@ -10,7 +10,7 @@ public class GarageController : MonoBehaviour
     public static GarageController Instance;
     public Transform BikePos;
     public BikeAndCharacter currentBike;
-    public GameObject newBike;
+
 
     private PlayerModel _player;
 
@@ -18,6 +18,10 @@ public class GarageController : MonoBehaviour
     {
         Instance = this;
         _player = GameManager.Instance._player;
+    }
+    private void OnEnable()
+    {
+        UIManager.Instance.Garage.Show();
     }
     public void FixedUpdate()
     {
@@ -39,6 +43,7 @@ public class GarageController : MonoBehaviour
         BikeModel bike = DataManager.Instance.bikes.listBike.Where(x => x.Id == bikeid).FirstOrDefault();
         GameObject bikeObject = Instantiate(bike.bikeSource, BikePos);
         currentBike = bikeObject.GetComponent<BikeAndCharacter>();
+        currentBike.Bike.AutoBrakeAtLowSpeed = true;
         _player.currentBike = bikeid;
         Utility.SaveGameData(_player);
         //currentBike.SetRigidKinematic();

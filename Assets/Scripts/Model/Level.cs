@@ -43,6 +43,6 @@ public class Level : MonoBehaviour
     private void OnGenMeshComplete(List<MeshFilter> lstMest)
     {
         levelReady = true;
-        LevelController.Instance.OnlevelLoaded();
+        //LevelController.Instance.OnlevelLoaded();
     }
 }

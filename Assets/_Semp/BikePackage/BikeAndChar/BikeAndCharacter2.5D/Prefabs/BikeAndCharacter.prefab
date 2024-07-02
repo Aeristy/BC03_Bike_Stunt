@@ -5435,8 +5435,16 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2049
   RollOverProtection: 1
-  AutoBrakeAtLowSpeed: 1
+  AutoBrakeAtLowSpeed: 0
+  configMaxMotorSpeed: 0
+  configMaxMotorTorque: 0
+  configMaxMotorTorqueOnSlopes: 0
+  configMotorSpeedIncrement: 0
+  configMaxVelocity: 0
+  configTorqueForce: 0
   centerOfMassPos: {x: 0, y: 0}
+  nextMotorSpeedIncrement: 0
+  motorSpeed: 0
   isGliding: 0
   GliderForce: {x: 0, y: 0}
   TurnMultiplier: 1
@@ -5819,6 +5827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: 87411757275584d479d44d51fce72688, type: 2}
+  CharacterBones: {fileID: 0}
   DistanceToGroundLayers:
     serializedVersion: 2
     m_Bits: 2049
@@ -6412,6 +6421,7 @@ MonoBehaviour:
   Character: {fileID: 3552655428431594422}
   Pause: 0
   isRotating: 0
+  isInGarage: 0
 --- !u!1 &3552655428916202678
 GameObject:
   m_ObjectHideFlags: 0
@@ -11609,6 +11619,17 @@ MonoBehaviour:
   LeftLowerArmBone: {fileID: 5299459701472857802}
   LeftUpperLegBone: {fileID: 4744170863441754332}
   LeftLowerLegBone: {fileID: 2615943119221276651}
+  HeadBoneMemory: {x: 0, y: 0, z: 0, w: 0}
+  TorsoBoneMemory: {x: 0, y: 0, z: 0, w: 0}
+  RightUpperArmBoneMemory: {x: 0, y: 0, z: 0, w: 0}
+  RightLowerArmBoneMemory: {x: 0, y: 0, z: 0, w: 0}
+  RightUpperLegBoneMemory: {x: 0, y: 0, z: 0, w: 0}
+  RightLowerLegBoneMemory: {x: 0, y: 0, z: 0, w: 0}
+  LeftUpperArmBoneMemory: {x: 0, y: 0, z: 0, w: 0}
+  LeftLowerArmBoneMemory: {x: 0, y: 0, z: 0, w: 0}
+  LeftUpperLegBoneMemory: {x: 0, y: 0, z: 0, w: 0}
+  LeftLowerLegBoneMemory: {x: 0, y: 0, z: 0, w: 0}
+  boneLoaded: 1
 --- !u!1 &3872025368383248134
 GameObject:
   m_ObjectHideFlags: 0

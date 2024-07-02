@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
         Instance = this;
         SceneManager.LoadScene("gara", LoadSceneMode.Additive);
         
-        Utility.LoadGameData();
+        _player = Utility.LoadGameData();
         
     }
     public void LoadTestScene()

@@ -19,8 +19,19 @@ MonoBehaviour:
     numberAds: 0
     currentAds: 0
     bikeName: 
-    carSource: {fileID: 853341360205517547, guid: 69b141d7bae700f4fb69e875a5e8f491, type: 3}
-    carGhost: {fileID: 0}
+    bikeSource: {fileID: 3552655428778417928, guid: 06fb9c7058fb8504faeb84695a0173d4, type: 3}
+    bikeGhost: {fileID: 0}
     baseColor: 0
-    carThumb: {fileID: 0}
+    bikeThumb: {fileID: 21300000, guid: b4d7f8fdc01f0d1499571a08545c6674, type: 3}
+    bikeDes: 
+  - Id: 2
+    price: 0
+    priceIAP: 0
+    numberAds: 0
+    currentAds: 0
+    bikeName: 
+    bikeSource: {fileID: 853341360205517547, guid: 69b141d7bae700f4fb69e875a5e8f491, type: 3}
+    bikeGhost: {fileID: 0}
+    baseColor: 0
+    bikeThumb: {fileID: 21300000, guid: 6443653fa830cc3478a473db2efa5f0c, type: 3}
     bikeDes: 

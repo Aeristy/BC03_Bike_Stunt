@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: ee53b07b26e54f74a887588ddf807335
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 34
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Conduit ITC
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: aaa47336437f2564290486d2bbab5161, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

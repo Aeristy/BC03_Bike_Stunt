@@ -22,4 +22,9 @@ public class GameManager : MonoBehaviour
         SceneManager.UnloadSceneAsync("gara");
         SceneManager.LoadScene("Test Scene", LoadSceneMode.Additive);
     }
+    public void BackToGarage()
+    {
+        SceneManager.UnloadSceneAsync("Test Scene");
+        SceneManager.LoadScene("gara", LoadSceneMode.Additive);
+    }
 }

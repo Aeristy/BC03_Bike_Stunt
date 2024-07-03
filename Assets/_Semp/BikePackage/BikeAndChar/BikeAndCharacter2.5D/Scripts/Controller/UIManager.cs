@@ -16,17 +16,19 @@ public class UIManager : MonoBehaviour
     public UIGarage Garage;
     public UIIngame Ingame;
     public UISelectLevel SelectLevel;
+    public UIFail Fail;
+    public UILoadingLevel LoadingLevel;
+    public UIComplete Complete;
     private void Awake()
     {
         Instance = this;
-        foreach(PopupBase popup in transform.GetComponentsInChildren<PopupBase>())
+        foreach (PopupBase popup in PopupList)
         {
-            PopupList.Add(popup);
             popup.gameObject.SetActive(false);
         }
-        PopupList.Add(Ingame);
-        Ingame.gameObject.SetActive(false);
+
     }
+
     public static Vector2 GetPosBy(RectTransform rectTransform, MoveDirection position)
     {
         try

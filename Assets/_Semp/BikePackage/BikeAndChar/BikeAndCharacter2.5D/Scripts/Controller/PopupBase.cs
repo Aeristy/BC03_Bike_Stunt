@@ -55,6 +55,7 @@ public class PopupBase : MonoBehaviour
         {
             canvasGroup = gameObject.AddComponent<CanvasGroup>();
         }
+        UIManager.PopupList.Add(this);
     }
 
     protected virtual void OnEnable()

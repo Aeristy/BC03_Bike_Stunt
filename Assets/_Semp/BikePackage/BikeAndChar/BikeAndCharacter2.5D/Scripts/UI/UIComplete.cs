@@ -44,4 +44,21 @@ public class UIComplete : PopupBase
 
 
     }
+    public void BackToGarage()
+    {
+        GameManager.Instance.BackToGarage();
+        Hide();
+    }
+    public void OnNext()
+    {
+        if (_player.currentLevel == DataManager.Instance.levels.listLevel.Count)
+            BackToGarage();
+        else
+        {
+            _player.currentLevel++;
+            Utility.SaveGameData(_player);
+            LevelController.Instance.OnlevelLoad();
+            Hide();
+        }
+    }
 }

@@ -15,10 +15,6 @@ public class BC_Camera : MonoBehaviour
 
     public float PreOffset = 0;
 
-    public TriggerOffset preTrigger;
-
-    public TriggerOffset nextTrigger;
-
     public float ZoomByItem = 0;
 
     public float MaxDistance = 0;
@@ -40,8 +36,7 @@ public class BC_Camera : MonoBehaviour
         ZoomByItem = 0;
         MaxDistance = 0;
 
-        preTrigger = null;
-        nextTrigger = null;
+
     }
 
 

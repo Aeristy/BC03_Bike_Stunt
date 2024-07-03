@@ -9,10 +9,11 @@ public class LevelController : MonoBehaviour
     public BikeAndCharacter bikeController;
     public BC_Camera cameraman;
     public LevelPrefab levelPrefab;
+    public bool IsPlaying = false;
 
     private GameObject BikeObject;
-
     private PlayerModel _player;
+
     [HideInInspector] public Vector3 lastCheckpoint;
 
     private void Awake()
@@ -27,8 +28,9 @@ public class LevelController : MonoBehaviour
         Physics2D.simulationMode = SimulationMode2D.Script;
         //level.GenMesh();
         UIManager.Instance.Ingame.Show();
+
         OnlevelLoad();
-        StartCoroutine(SpawnBike(levelPrefab.startPoint.position));
+        
     }
 
     protected IEnumerator SpawnBike(Vector3 _pos)
@@ -42,6 +44,7 @@ public class LevelController : MonoBehaviour
             BikeObject = null;
             bikeController = null;
             cameraman.SetObjectToTrack(null);
+            
         }
 
         // create new
@@ -52,19 +55,26 @@ public class LevelController : MonoBehaviour
         bikeController.PauseBike(true);
         bikeController.HandleUserInput = false;
         bikeController.Bike.IsBraking = true;
-
+        
         // inform cameraman
         cameraman.SetTarget(bikeController.Character.TorsoBody);
 
         yield return new WaitForSeconds(0.5f);
         bikeController.HandleUserInput = true;
         bikeController.PauseBike(false);
+        IsPlaying = true;
+        UIManager.Instance.Ingame.OnStart();
     }
 
     public void OnlevelLoad()
     {
+        foreach(Transform t in transform)
+        {
+            Destroy(t.gameObject);
+        }
         GameObject level = Instantiate(DataManager.Instance.levels.listLevel[0].LevelSource, transform);
         levelPrefab = level.GetComponent<LevelPrefab>();
+        StartCoroutine(SpawnBike(levelPrefab.startPoint.position));
         UIManager.Instance.Ingame.Show();
     }
 
@@ -83,6 +93,38 @@ public class LevelController : MonoBehaviour
     {
         //if (!paused)
         Physics2D.Simulate(Time.fixedDeltaTime);
+    }
+    public void OnLose()
+    {
+        Debug.Log("Thua oi`");
+    }
+    public void OnWIn()
+    {
+        if (!IsPlaying) return;
+        IsPlaying = false;
+        UIManager.Instance.Ingame.OnWin();
+        bikeController.Bike.IsBraking = true;
+        StartCoroutine(ShowComplete());
+        
+    }
+    public void OnFail()
+    {
+        if (!IsPlaying) return;
+        IsPlaying = false;
+        UIManager.Instance.Ingame.OnFail();
+        StartCoroutine(ShowFail());
+    }
+    public IEnumerator ShowComplete()
+    {
+        yield return new WaitForSeconds(1.5f);
+        UIManager.Instance.Complete.Show();
+        UIManager.Instance.Ingame.Hide(false);
+    }
+    public IEnumerator ShowFail()
+    {
+        yield return new WaitForSeconds(1.5f);
+        UIManager.Instance.Fail.Show();
+        UIManager.Instance.Ingame.Hide(false);
     }
 
 }

@@ -46,7 +46,7 @@ public class PopupBase : MonoBehaviour
     [Range(0f, 10f)]
     public float timeDelayOut;
 
-    public PlayerModel _player;
+    protected PlayerModel _player;
 
     protected virtual void Awake()
     {

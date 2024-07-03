@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1819057151786280890}
   - component: {fileID: 3355548144176064543}
   - component: {fileID: 681655478551649493}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: pulley
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 401394833863165527}
   - component: {fileID: 3620280490257828338}
   - component: {fileID: 1574332035576151352}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: caton_box
   m_TagString: Untagged
   m_Icon: {fileID: 0}

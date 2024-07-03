@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5213546602673038920}
   - component: {fileID: 9220529346149247469}
   - component: {fileID: 6345873001906085159}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: concrete_beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}

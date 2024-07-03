@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2050038046930492340}
   - component: {fileID: 4518999283978744726}
   - component: {fileID: 1824594114664777564}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4404455448075909182}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -83,3 +84,96 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &4995162671890742881
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4404455448075909182}
+  - component: {fileID: 4436882567560428885}
+  m_Layer: 11
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4404455448075909182
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4995162671890742881}
+  m_LocalRotation: {x: -0.023086118, y: 0.9997335, z: -0, w: 0}
+  m_LocalPosition: {x: -0.66011214, y: 0.2452767, z: -430.98987}
+  m_LocalScale: {x: 0.9999999, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2050038046930492340}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &4436882567560428885
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4995162671890742881}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 6.9991603, y: 0.84966946}
+      - {x: 9.880996, y: 1.5863333}
+      - {x: 13.121215, y: 2.4473867}
+      - {x: 13.110396, y: 2.5067892}
+      - {x: 13.793654, y: 2.4197073}
+      - {x: 13.814498, y: 2.5508566}
+      - {x: 13.133254, y: 2.637908}
+      - {x: 13.011657, y: 2.6089468}
+      - {x: 8.546477, y: 1.4236441}
+      - {x: 3.815658, y: 0.27792266}
+      - {x: 3.046966, y: 0.17256072}
+      - {x: 0.7044215, y: -0.13900848}
+      - {x: -0.0836792, y: -0.17694092}
+      - {x: -2.437348, y: -0.2868051}
+      - {x: -5.4595494, y: -0.13685699}
+      - {x: -5.559235, y: -0.12165922}
+      - {x: -6.3126593, y: 0.056819677}
+      - {x: -8.653077, y: 0.602706}
+      - {x: -10.8902445, y: 1.3468314}
+      - {x: -11.648103, y: 1.6194755}
+      - {x: -12.344697, y: 1.9450828}
+      - {x: -14.412614, y: 2.9459982}
+      - {x: -14.516999, y: 3.0044699}
+      - {x: -15.203783, y: 3.096775}
+      - {x: -15.20401, y: 2.9577017}
+      - {x: -14.55742, y: 2.8630514}
+      - {x: -13.841691, y: 2.516982}
+      - {x: -11.648057, y: 1.4639732}
+      - {x: -8.664216, y: 0.4559775}
+      - {x: -5.4937596, y: -0.28314298}
+      - {x: -2.4446874, y: -0.41937345}
+      - {x: -1.6515793, y: -0.38605857}
+      - {x: -0.07418871, y: -0.31796354}
+      - {x: 0.8083644, y: -0.274476}
+      - {x: 2.26152, y: -0.0731668}
+      - {x: 3.8927526, y: 0.1192283}

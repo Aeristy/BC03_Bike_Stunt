@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3127365433809731404}
   - component: {fileID: 2074323104802238697}
   - component: {fileID: 4264221198311719971}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tyre
   m_TagString: Untagged
   m_Icon: {fileID: 0}

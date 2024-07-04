@@ -548,7 +548,7 @@ namespace Kamgam.BikeAndCharacter25D
 
 #if UNITY_EDITOR
             // update configs if necessary
-            loadConfig();
+            //loadConfig();
 #endif
 
             // update bike rotation quadrant

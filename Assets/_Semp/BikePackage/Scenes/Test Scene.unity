@@ -20,13 +20,13 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.38039216, g: 0.43529412, b: 0.49019608, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_AmbientMode: 3
+  m_SubtractiveShadowColor: {r: 0.8313726, g: 0.8313726, b: 0.8313726, a: 1}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 4998f18003a1c5c45b750f6a95be6a6a, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.23995596, g: 0.39753765, b: 0.6262119, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: bbd1a572a14d7d043aa34ad10a325ae8, type: 2}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: 5cc5c9c793247d048ab3bbd5fd047362, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: a7308e39001254c47b857d8fe6396142, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -7463,8 +7463,6 @@ MonoBehaviour:
   OffsetByItem: 0
   TargetOffset: 0
   PreOffset: 0
-  preTrigger: {fileID: 0}
-  nextTrigger: {fileID: 0}
   ZoomByItem: 0
   MaxDistance: 0
   cameraToMove: {fileID: 185696450}
@@ -18902,7 +18900,8 @@ MonoBehaviour:
   bikeController: {fileID: 0}
   cameraman: {fileID: 185696451}
   levelPrefab: {fileID: 0}
-  lastCheckpoint: {x: 0, y: 0}
+  IsPlaying: 0
+  lastCheckpoint: {x: 0, y: 0, z: 0}
 --- !u!4 &456111944
 Transform:
   m_ObjectHideFlags: 0
@@ -26817,19 +26816,19 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.627451, g: 0.67058825, b: 0.4627451, a: 1}
+  m_Intensity: 2.2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
-    m_Resolution: 1
+    m_Type: 2
+    m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
+    m_Bias: 2
+    m_NormalBias: 0
     m_NearPlane: 0.2
     m_CullingMatrixOverride:
       e00: 1
@@ -26855,9 +26854,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2147483647
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1

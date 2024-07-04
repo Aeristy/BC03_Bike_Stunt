@@ -1,5 +1,6 @@
 using Kamgam.BikeAndCharacter25D;
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 public class LevelController : MonoBehaviour
@@ -72,7 +73,7 @@ public class LevelController : MonoBehaviour
         {
             Destroy(t.gameObject);
         }
-        GameObject level = Instantiate(DataManager.Instance.levels.listLevel[0].LevelSource, transform);
+        GameObject level = Instantiate(DataManager.Instance.levels.listLevel.Where(x => x.Id == _player.currentLevel).FirstOrDefault().LevelSource, transform);
         levelPrefab = level.GetComponent<LevelPrefab>();
         StartCoroutine(SpawnBike(levelPrefab.startPoint.position));
         UIManager.Instance.Ingame.Show();
@@ -111,6 +112,8 @@ public class LevelController : MonoBehaviour
     {
         if (!IsPlaying) return;
         IsPlaying = false;
+        bikeController.Bike.enabled = false;
+        bikeController.Character.enabled = false;
         UIManager.Instance.Ingame.OnFail();
         StartCoroutine(ShowFail());
     }

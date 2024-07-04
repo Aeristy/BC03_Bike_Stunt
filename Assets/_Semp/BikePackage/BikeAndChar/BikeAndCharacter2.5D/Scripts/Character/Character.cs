@@ -458,5 +458,10 @@ namespace Kamgam.BikeAndCharacter25D
             positionsOnGround.Clear();
             tmpAverageDeltaCountdown = 0;
         }
+        public void OnHitGround()
+        {
+            LevelController.Instance.OnFail();
+        }
+
     }
 }

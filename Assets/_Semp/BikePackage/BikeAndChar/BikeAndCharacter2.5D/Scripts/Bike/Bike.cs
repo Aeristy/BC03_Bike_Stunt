@@ -548,7 +548,7 @@ namespace Kamgam.BikeAndCharacter25D
 
 #if UNITY_EDITOR
             // update configs if necessary
-            //loadConfig();
+            loadConfig();
 #endif
 
             // update bike rotation quadrant
@@ -613,6 +613,10 @@ namespace Kamgam.BikeAndCharacter25D
             {
                 tmpLastVelocityVectorLocal = VelocityVectorLocal;
             }
+            //if (Mathf.Abs(BackWheelBody.angularVelocity) > 100)
+            //    BackWheelBody.angularVelocity = -100;
+            //if (Mathf.Abs(FrontWheelBody.angularVelocity) > 100)
+            //    FrontWheelBody.angularVelocity = -100;
         }
 
         protected void fixedUpdateCollidersForSuspension()
@@ -748,7 +752,7 @@ namespace Kamgam.BikeAndCharacter25D
                         var tmpPosition = BackWheel.transform.TransformPoint(Vector3.zero);
                         Vector2 position = new Vector2(tmpPosition.x, tmpPosition.y);
                         BackWheelBody.AddForceAtPosition(direction * Config.BikeBackWheelDownForceOnSlopes * speedMultiply, position);
-
+                        
                         // make motor torque force stronger on slopes
                         if (SlopeInDegrees > 30 && SlopeInDegrees < 90)
                         {

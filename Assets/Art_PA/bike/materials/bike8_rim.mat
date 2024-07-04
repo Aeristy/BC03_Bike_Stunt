@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: bike8_rim
-  m_Shader: {fileID: 2, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 20, guid: 0000000000000000f000000000000000, type: 0}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -22,6 +22,10 @@ Material:
     m_TexEnvs:
     - _BumpMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Cube:
+        m_Texture: {fileID: 8900000, guid: 5d036ec670fe679418e3a84fadf31b7f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -86,4 +90,5 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DiffuseColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _ReflectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_BuildTextureStacks: []

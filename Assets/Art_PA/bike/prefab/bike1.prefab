@@ -110,7 +110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1258560216521886081}
   m_Layer: 0
-  m_Name: Motors_Plate
+  m_Name: PlateHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,7 +143,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1258560216644425126}
   m_Layer: 0
-  m_Name: Wheels
+  m_Name: Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 6484392986798110247}
   - component: {fileID: 4173841332826941797}
   m_Layer: 0
-  m_Name: Rim_F_1
+  m_Name: Rim_F
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -499,7 +499,7 @@ GameObject:
   - component: {fileID: 2414080545380646411}
   - component: {fileID: 3862419115129586730}
   m_Layer: 0
-  m_Name: Rim_B_1
+  m_Name: Rim_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -748,7 +748,7 @@ GameObject:
   - component: {fileID: 403708067385645991}
   - component: {fileID: 7129056778781464565}
   m_Layer: 0
-  m_Name: Tyre_F_1
+  m_Name: Tyre_F
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1163,7 +1163,7 @@ GameObject:
   - component: {fileID: 5841567402477791250}
   - component: {fileID: 2807334751073842245}
   m_Layer: 0
-  m_Name: Tyre_B_1
+  m_Name: Tyre_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -153,7 +153,7 @@ namespace Kamgam.BikeAndCharacter25D
                 return;
 
 #if UNITY_EDITOR
-            loadConfig();
+            //loadConfig();
 #endif
         }
 

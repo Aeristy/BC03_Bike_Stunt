@@ -11,6 +11,8 @@ public class LevelController : MonoBehaviour
     public BC_Camera cameraman;
     public LevelPrefab levelPrefab;
     public bool IsPlaying = false;
+    public bool IsPause = false;
+    public float timer = 0;
 
     private GameObject BikeObject;
     private PlayerModel _player;
@@ -28,7 +30,7 @@ public class LevelController : MonoBehaviour
         //StartCoroutine(SpawnBike(level.StartPoint.position));
         Physics2D.simulationMode = SimulationMode2D.Script;
         //level.GenMesh();
-        UIManager.Instance.Ingame.Show();
+        
 
         OnlevelLoad();
         
@@ -60,11 +62,17 @@ public class LevelController : MonoBehaviour
         // inform cameraman
         cameraman.SetTarget(bikeController.Character.TorsoBody);
 
-        yield return new WaitForSeconds(0.5f);
+        
+        if (!UIManager.Instance.LoadingLevel.isActiveAndEnabled)
+        {
+            UIManager.Instance.Ingame.Show(false);
+            UIManager.Instance.Ingame.OnStart();
+            IsPlaying = true;
+        }
+        yield return new WaitForSeconds(0f);
         bikeController.HandleUserInput = true;
         bikeController.PauseBike(false);
-        IsPlaying = true;
-        UIManager.Instance.Ingame.OnStart();
+
     }
 
     public void OnlevelLoad()
@@ -73,10 +81,11 @@ public class LevelController : MonoBehaviour
         {
             Destroy(t.gameObject);
         }
+        timer = 0;
         GameObject level = Instantiate(DataManager.Instance.levels.listLevel.Where(x => x.Id == _player.currentLevel).FirstOrDefault().LevelSource, transform);
         levelPrefab = level.GetComponent<LevelPrefab>();
         StartCoroutine(SpawnBike(levelPrefab.startPoint.position));
-        UIManager.Instance.Ingame.Show();
+        
     }
 
 
@@ -93,11 +102,12 @@ public class LevelController : MonoBehaviour
     public void FixedUpdate()
     {
         //if (!paused)
-        Physics2D.Simulate(Time.fixedDeltaTime);
-    }
-    public void OnLose()
-    {
-        Debug.Log("Thua oi`");
+
+        if(!IsPause)
+        {
+            Physics2D.Simulate(Time.fixedDeltaTime);
+            timer += Time.fixedDeltaTime;
+        }
     }
     public void OnWIn()
     {
@@ -105,6 +115,7 @@ public class LevelController : MonoBehaviour
         IsPlaying = false;
         UIManager.Instance.Ingame.OnWin();
         bikeController.Bike.IsBraking = true;
+        bikeController.Bike.GetComponent<Rigidbody2D>().velocity = bikeController.Bike.GetComponent<Rigidbody2D>().velocity.normalized * 20;
         StartCoroutine(ShowComplete());
         
     }
@@ -127,6 +138,12 @@ public class LevelController : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         UIManager.Instance.Fail.Show();
+        UIManager.Instance.Ingame.Hide(false);
+    }
+    public void OnPause()
+    {
+        IsPause = true;
+        UIManager.Instance.Pause.Show();
         UIManager.Instance.Ingame.Hide(false);
     }
 

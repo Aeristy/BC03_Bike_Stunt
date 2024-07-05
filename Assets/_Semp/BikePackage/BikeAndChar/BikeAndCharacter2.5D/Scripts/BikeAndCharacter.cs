@@ -17,7 +17,7 @@ namespace Kamgam.BikeAndCharacter25D
 
         [HideInInspector] public bool Pause;
 
-        public float CurrentSpeed
+        public float CurrentSpeed  
         {
             get
             {

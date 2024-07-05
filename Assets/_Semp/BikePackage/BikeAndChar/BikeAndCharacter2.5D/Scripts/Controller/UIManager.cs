@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour
     public UIFail Fail;
     public UILoadingLevel LoadingLevel;
     public UIComplete Complete;
+    public UIPause Pause;
     private void Awake()
     {
         Instance = this;

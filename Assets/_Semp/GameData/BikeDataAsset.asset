@@ -35,3 +35,14 @@ MonoBehaviour:
     baseColor: 0
     bikeThumb: {fileID: 21300000, guid: b4d7f8fdc01f0d1499571a08545c6674, type: 3}
     bikeDes: 
+  - Id: 3
+    price: 0
+    priceIAP: 0
+    numberAds: 0
+    currentAds: 0
+    bikeName: 
+    bikeSource: {fileID: 8433691764363752496, guid: 6bdf9e904337e344c8c539a33705cffb, type: 3}
+    bikeGhost: {fileID: 0}
+    baseColor: 0
+    bikeThumb: {fileID: 21300000, guid: 6443653fa830cc3478a473db2efa5f0c, type: 3}
+    bikeDes: 
